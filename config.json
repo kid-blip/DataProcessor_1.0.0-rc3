@@ -1,0 +1,14 @@
+{
+    "default_language": "ru",
+    "available_languages": ["ru", "en", "es"],
+    "last_used_urls": {
+        "web_page_example": "",
+        "another_web_example": "https://example.com"
+    },
+    "example_file_paths": {
+        "csv_file": "example.csv",
+        "text_log_file": "example.txt",
+        "json_input_file": "input_data.json"
+    },
+    "output_directory": "reports/"
+}
