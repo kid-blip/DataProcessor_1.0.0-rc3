@@ -1,104 +1,138 @@
-# DataProcessor (Версия 1.0.0)
+**DataProcessor** is a powerful and versatile tool developed in **Python**, offering comprehensive solutions for reading, processing, filtering, and generating reports from various data sources. From its initial **Alpha version 0.2** as a basic console application to the current **Release 1.0.0** with a full graphical user interface and an executable distribution, the program is designed for efficient automation of data analysis and presentation tasks.
 
-**DataProcessor** — это мощный и многофункциональный инструмент, разработанный на **Python**, который предоставляет комплексные решения для чтения, обработки, фильтрации и генерации отчетов из различных источников данных. От примитивной консольной **Альфа-версии 0.2** до текущего **Релиза 1.0.0** с полноценным графическим интерфейсом и дистрибутивом в виде исполняемого файла, программа создана для эффективной автоматизации задач по анализу и представлению данных.
+## About the Project
 
-## О проекте
+`DataProcessor` has undergone significant development. Starting as a simple console script (~120 lines of code), it has been continuously expanded and improved, including bug fixes (version 0.2.1) and the addition of complex new functionalities. The current **Version 1.0.0** is a fully functional application with an intuitive Graphical User Interface (GUI) that does not require Python or additional libraries to be installed on the user's computer, thanks to its distribution as a **self-contained executable (.exe) file**.
 
-`DataProcessor` прошел путь значительного развития. Начав как простой консольный скрипт (~120 строк кода), он был постепенно расширен и улучшен, включая исправления ошибок (версия 0.2.1) и добавление новых, сложных функциональных возможностей. Текущая **Версия 1.0.0** представляет собой полностью рабочее приложение с интуитивно понятным графическим интерфейсом (GUI), которое не требует установки Python или дополнительных библиотек на компьютере пользователя благодаря распространению в виде **самодостаточного исполняемого файла (.exe)**.
+Special attention has been paid to stability, a wide range of features, cross-language support, and maximum user convenience.
 
-Особое внимание было уделено стабильности, широкому набору функций, кросс-языковой поддержке и максимальному удобству для пользователя.
+## Key Features (Version 1.0.0)
 
-## Ключевые Возможности (Версия 1.0.0)
+### 1. Graphical User Interface (GUI) - NEW!
 
-### 1. Графический Пользовательский Интерфейс (GUI) - НОВОЕ!
+* **Intuitive Design:** A clean and minimalist interface, implemented using Tkinter.
+* **Easy Navigation:** Functionality is divided into tabs (CSV, Logs, JSON, Web Pages, URL Monitoring, Settings), providing straightforward access to all features.
 
-* **Интуитивно понятный дизайн:** Чистый и минималистичный интерфейс, реализованный на Tkinter.
-* **Удобная навигация:** Функционал разделен по вкладкам (CSV, Логи, JSON, Веб-страницы, Мониторинг URL, Настройки), что обеспечивает простой доступ ко всем функциям.
+### 2. CSV File Processing
 
-### 2. Обработка CSV-файлов
+* **Reading:** Successfully reads data from CSV files, with file selection via the GUI.
+* **Filtering:** Powerful capabilities for filtering records based on specified conditions for any column (value comparisons, substring search), with visual input fields for criteria.
+* **Reporting:** Generates detailed summary reports for all or filtered CSV data.
 
-* **Чтение:** Успешное чтение данных из CSV-файлов, с возможностью выбора файла через GUI.
-* **Фильтрация:** Мощные возможности фильтрации записей по заданным условиям для любого столбца (сравнения значений, поиск подстроки), с визуальными полями для ввода условий.
-* **Отчеты:** Генерация подробных сводных отчетов по всем или отфильтрованным CSV-данным.
+### 3. Text Log Analysis
 
-### 3. Анализ Текстовых Логов
+* **Reading:** Reads content from plain text files.
+* **Keyword Filtering:** Extracts lines containing a specific word or phrase.
+* **Regular Expression (Regex) Filtering:** Advanced filtering of lines based on complex patterns.
+* **Reporting:** Provides summaries of log data.
 
-* **Чтение:** Чтение содержимого из обычных текстовых файлов.
-* **Фильтрация по ключевому слову:** Извлечение строк, содержащих определенное слово или фразу.
-* **Фильтрация по регулярному выражению (Regex):** Продвинутая фильтрация строк на основе сложных шаблонов.
-* **Отчеты:** Предоставление сводок по логам.
+### 4. JSON File Processing
 
-### 4. Обработка JSON-файлов
+* **Reading:** Loads data from JSON files into Python structures.
+* **Filtering:** Ability to filter JSON objects by specified keys and values (supports flat structures).
+* **Reporting:** Generates reports on JSON content, including object count and key overview.
 
-* **Чтение:** Загрузка данных из JSON-файлов в структуры Python.
-* **Фильтрация:** Возможность фильтрации JSON-объектов по заданным ключам и значениям (поддерживается для плоских структур).
-* **Отчеты:** Генерация отчетов по содержимому JSON, включая количество объектов и обзор ключей.
+### 5. Web Page Parsing (HTML Web Scraping)
 
-### 5. Парсинг Веб-страниц (HTML Web Scraping)
+* **Content Download:** Retrieves the full HTML content from a specified URL.
+* **Custom URLs:** Users can enter URL addresses directly in the GUI.
+* **Text Extraction:** Extracts all visible text from a page.
+* **Specific HTML Element Extraction:** Automatically detects and extracts content from `<h1>`, `<h2>`, `<p>`, `<a>` tags.
+* **Reporting:** Generates reports about the web page.
 
-* **Скачивание контента:** Получение полного HTML-контента с указанного URL.
-* **Пользовательские URL:** Возможность ввода URL-адреса пользователем непосредственно в GUI.
-* **Извлечение текста:** Извлечение всего видимого текста со страницы.
-* **Извлечение специфических HTML-элементов:** Автоматическое обнаружение и извлечение контента из `<h1>`, `<h2>`, `<p>`, `<a>`.
-* **Отчеты:** Генерация отчетов о веб-странице.
+### 6. Real-time URL Monitoring (NEW!)
 
-### 6. Мониторинг URL в Реальном Времени (НОВОЕ!)
+* **Background Monitoring:** Ability to specify a URL and an interval for the program to periodically check the page for changes or collect data.
+* **Control:** Buttons to start and stop monitoring.
 
-* **Фоновый мониторинг:** Возможность указать URL и интервал, с которым программа будет периодически проверять страницу на изменения или собирать данные.
-* **Управление:** Кнопки для запуска и остановки мониторинга.
+### 7. Multilingual Interface (Localization)
 
-### 7. Многоязыковой Интерфейс (Локализация)
+* Full interface support in three languages: **Russian**, **English**, and **Spanish**, with language selection available in the "Settings" section.
+* System for detecting missing translations (`LOSING TRANSLATE KEY`) for quick bug fixing.
 
-* Полная поддержка интерфейса на трех языках: **Русский**, **Английский** и **Испанский**, с возможностью выбора языка в разделе "Настройки".
-* Система обнаружения отсутствующих переводов (`LOSING TRANSLATE KEY`) для быстрого баг-фиксинга.
+### 8. Report Saving
 
-### 8. Сохранение Отчетов
+* Ability to save all generated reports to text files for later analysis or archiving, with file selection via the GUI.
 
-* Возможность сохранения всех сгенерированных отчетов в текстовые файлы для последующего анализа или архивирования, с выбором файла через GUI.
+### 9. Distributed as an .EXE file (NEW!)
 
-### 9. Распространение как .EXE файла (НОВОЕ!)
+* The program is distributed as a self-contained executable file for Windows, requiring no Python installation or additional libraries for the user. Simply download and run!
 
-* Программа распространяется в виде самодостаточного исполняемого файла для Windows, не требующего установки Python или дополнительных библиотек пользователем. Просто скачайте и запустите!
+## How to Run
 
-## Как Запустить
+### Requirements
 
-### Требования
+* Windows operating system (to run the .EXE file).
+* For running from source code (if not using the .EXE): Python 3.x and dependencies listed below.
 
-* Операционная система Windows (для запуска .EXE файла).
-* Для запуска из исходного кода (если не используете .EXE): Python 3.x и зависимости, указанные ниже.
+### Running the Executable (.EXE)
 
-### Запуск исполняемого файла (.EXE)
+1.  Download the `DataProcessor.exe` file from the [Releases](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME/releases) section.
+2.  Run the file by double-clicking it.
 
-1.  Скачайте файл `DataProcessor.exe` из раздела [Releases](https://github.com/ВАШ_НИКНЕЙМ/ВАШ_РЕПОЗИТОРИЙ/releases).
-2.  Запустите файл двойным щелчком.
+### Running from Source Code (for Developers)
 
-### Запуск из исходного кода (для разработчиков)
-
-1.  **Установите зависимости**:
+1.  **Install dependencies**:
     ```bash
-    pip install requests beautifulsoup4 # возможно, потребуются другие библиотеки, если ты использовал их для GUI, например, Pillow
+    pip install requests beautifulsoup4 # Add any other libraries you used for GUI, e.g., Pillow
     ```
-2.  **Клонируйте репозиторий**:
+2.  **Clone the repository**:
     ```bash
-    git clone [https://github.com/ВАШ_НИКНЕЙМ/ВАШ_РЕПОЗИТОРИЙ.git](https://github.com/ВАШ_НИКНЕЙМ/ВАШ_РЕПОЗИТОРИЙ.git)
+    git clone [https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME.git](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME.git)
     ```
-3.  **Перейдите в директорию проекта**:
+3.  **Navigate to the project directory**:
     ```bash
-    cd ВАШ_РЕПОЗИТОРИЙ
+    cd YOUR_REPOSITORY_NAME
     ```
-4.  **Запустите программу**:
+4.  **Run the program**:
     ```bash
-    python your_main_script.py  # Замените на имя вашего основного файла Python
+    python your_main_script.py  # Replace with the name of your main Python file
     ```
 
-*Убедитесь, что `example.csv`, `example.txt`, `example.json` (если есть) находятся в той же директории, что и исполняемый файл или скрипт.*
+*Make sure `example.csv`, `example.txt`, `example.json` (if applicable) are in the same directory as the executable or script.*
 
-## Примеры Использования (Примеры Вывода)
+## Examples of Use (Screenshots)
+<img width="1005" height="720" alt="Снимок" src="https://github.com/user-attachments/assets/cdc58f3a-2661-4557-af7a-7509a1ca803d" />
+<img width="997" height="739" alt="Снимок3" src="https://github.com/user-attachments/assets/270013af-bba9-4e55-8dcb-694138c7e85e" />
+<img width="1002" height="715" alt="Снимок2" src="https://github.com/user-attachments/assets/f5f99b05-7ff1-4f41-a0fc-36f80f8c669a" />
 
-*(Вставьте здесь скриншоты твоего GUI, если можешь. Если нет, оставь текстовые примеры вывода, как раньше.)*
+**Example Screenshot: Main GUI Window**
+![Main GUI Window](images/main_gui_window.png)
+*(Replace 'images/main_gui_window.png' with your actual path and filename)*
 
---- (Вставьте здесь скриншоты, если возможно) ---
+**Example Screenshot: CSV Processing Tab**
+![CSV Processing Tab](images/csv_tab.png)
+*(Replace 'images/csv_tab.png' with your actual path and filename)*
 
-**Текстовые примеры (если нет скриншотов):**
+**Example Screenshot: URL Monitoring Tab**
+!https://chromewebstore.google.com/detail/tab-monitor/fbfenbmamfnkidjhndnkngincoblnjgk(images/url_monitoring_tab.png)
+*(Replace 'images/url_monitoring_tab.png' with your actual path and filename)*
+---
 
-**Отчет по CSV данным (фрагмент):**
+## What I Learned While Working on This Project
+
+This project was a huge step forward for me in programming. I gained valuable practical experience in:
+
+* Developing a **full-fledged Graphical User Interface (GUI)** using Tkinter.
+* **Packaging Python applications into executable files (.exe)** for easy distribution to users.
+* Working with diverse data formats, including structured (CSV, JSON), unstructured (logs), and semi-structured (HTML).
+* Implementing **background monitoring** for web resources.
+* Applying regular expressions for powerful and flexible text filtering.
+* Using external libraries (`requests`, `BeautifulSoup4`) for network requests and web page parsing.
+* Implementing a **multilingual interface (localization)**, including handling missing translations.
+* Effectively structuring a large amount of code (over 1200 lines!) for better readability and manageability.
+* Recognizing the critical importance of code commenting, maintaining code cleanliness, and thorough error handling for creating a stable product.
+
+This experience has significantly expanded my skills and understanding of developing complex, release-ready applications, as well as effectively managing a project from an early Alpha version to a full Release.
+
+## Example Files
+
+The repository includes the following files for demonstration and testing the program's functionality:
+
+* `example.csv`
+* `example.txt`
+* `example.json` (if you added one)
+
+## Author
+
+kid-blip
